@@ -1,0 +1,35 @@
+department
+-
+dept_no PK VARCHAR(10)
+dept_name VARCHAR(50)
+
+titles
+-
+title_id PK VARCHAR(10)
+title VARCHAR(50)
+
+
+employees
+-
+emp_no PK INTEGER
+emp_title_id VARCHAR(10) FK >- titles.title_id
+birth_date DATE
+first_name VARCHAR(50)
+last_name VARCHAR(50)
+sex VARCHAR(5)
+hire_date DATE
+
+dept_emp
+-
+emp_no INTEGER FK >- employees.emp_no
+dept_no VARCHAR(10) FK >- department.dept_no
+
+dept_manager
+-
+dept_no VARCHAR(10) FK >- department.dept_no
+emp_no INTEGER FK >- employees.emp_no
+
+salaries
+-
+emp_no PK INTEGER FK >- employees.emp_no
+salary INTEGER
